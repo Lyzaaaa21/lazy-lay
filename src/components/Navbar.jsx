@@ -1,7 +1,8 @@
 
-import {Link} from 'react-scroll'
+
 import React, { useEffect, useState } from 'react';
 import Icon from '../assets/Icon.png'
+import {Link} from 'react-scroll'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] =useState(false);
@@ -47,20 +48,15 @@ const Navbar = () => {
 
             {/* {NAV ITEMS FOR LARGE DEVICES} */}
             <ul className='md:flex space-x-12 hidden'>
-                {
-                    navItems.map(({link, path}) => <Link to={path} spy={true} smooth={true}
-                    offset={-100} key={path} > {link}</Link>)
-                }
-
-
-
-            </ul>
-
+                    {
+                        navItems.map(({link, path}) => <Link to={path} spy={true} key={path}>{link}</Link>)
+                    }
+                </ul>
             </div>
         </nav>
-
     </header>
   );
-}
+};
+
 
 export default Navbar
